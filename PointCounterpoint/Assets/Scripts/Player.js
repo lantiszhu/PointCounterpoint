@@ -13,7 +13,6 @@ public var keyboardPlayer = 1;
 var shotTimer : float;
 public var shotCooldown : float = 1;
 var playerAudio : AudioSource;
-public var shotClip : AudioClip;
 
 function Start () {
 	dist = (transform.position - Camera.main.transform.position).z;
@@ -23,7 +22,6 @@ function Start () {
 	bottomClamp = Camera.main.ViewportToWorldPoint(Vector3(0, 0, dist)).y + .5;
 	shotTimer = Time.time;
 	playerAudio = GetComponent(AudioSource);
-	playerAudio.clip = shotClip;
 }
 
 function FixedUpdate () {

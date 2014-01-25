@@ -167,9 +167,8 @@ MonoBehaviour:
   gamepad: 0
   keyboardPlayer: 2
   shotTimer: 0
-  shotCooldown: 1
+  shotCooldown: .200000003
   playerAudio: {fileID: 0}
-  shotClip: {fileID: 0}
 --- !u!96 &628104083
 TrailRenderer:
   m_ObjectHideFlags: 0
@@ -1490,7 +1489,6 @@ MonoBehaviour:
   shotTimer: 0
   shotCooldown: 1
   playerAudio: {fileID: 0}
-  shotClip: {fileID: 8300000, guid: f075c7974aa0d47c8bc8247642a2e015, type: 3}
 --- !u!50 &1085268365
 Rigidbody2D:
   m_ObjectHideFlags: 0
@@ -2850,6 +2848,10 @@ Prefab:
     - target: {fileID: 100000, guid: 8a582daa66e3240838ddb9cf0f101824, type: 2}
       propertyPath: m_Name
       value: Red Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 8a582daa66e3240838ddb9cf0f101824, type: 2}
+      propertyPath: shotCooldown
+      value: .200000003
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8a582daa66e3240838ddb9cf0f101824, type: 2}
