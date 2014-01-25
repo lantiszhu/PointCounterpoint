@@ -86,6 +86,7 @@ GameObject:
   - 50: {fileID: 628104081}
   - 114: {fileID: 628104082}
   - 96: {fileID: 628104083}
+  - 82: {fileID: 628104084}
   m_Layer: 0
   m_Name: Red Player
   m_TagString: Player
@@ -165,6 +166,10 @@ MonoBehaviour:
   playerNum: 1
   gamepad: 0
   keyboardPlayer: 2
+  shotTimer: 0
+  shotCooldown: 1
+  playerAudio: {fileID: 0}
+  shotClip: {fileID: 0}
 --- !u!96 &628104083
 TrailRenderer:
   m_ObjectHideFlags: 0
@@ -208,6 +213,64 @@ TrailRenderer:
       rgba: 56063
   m_MinVertexDistance: .100000001
   m_Autodestruct: 0
+--- !u!82 &628104084
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 628104078}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_audioClip: {fileID: 8300000, guid: caa4e2458c99b494395ad9b499beb9fb, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!1 &921674226
 GameObject:
   m_ObjectHideFlags: 0
@@ -1395,6 +1458,7 @@ GameObject:
   - 96: {fileID: 1085268368}
   - 198: {fileID: 1085268370}
   - 199: {fileID: 1085268369}
+  - 82: {fileID: 1085268371}
   m_Layer: 0
   m_Name: Blue Player
   m_TagString: Player
@@ -1423,6 +1487,10 @@ MonoBehaviour:
   playerNum: 2
   gamepad: 0
   keyboardPlayer: 2
+  shotTimer: 0
+  shotCooldown: 1
+  playerAudio: {fileID: 0}
+  shotClip: {fileID: 8300000, guid: f075c7974aa0d47c8bc8247642a2e015, type: 3}
 --- !u!50 &1085268365
 Rigidbody2D:
   m_ObjectHideFlags: 0
@@ -2597,6 +2665,64 @@ ParticleSystem:
     subEmitterCollision1: {fileID: 0}
     subEmitterDeath: {fileID: 0}
     subEmitterDeath1: {fileID: 0}
+--- !u!82 &1085268371
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1085268363}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!1001 &1429890266
 Prefab:
   m_ObjectHideFlags: 0
@@ -2677,6 +2803,10 @@ Prefab:
       propertyPath: m_Colors.m_Color[4].rgba
       value: 16770889
       objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 8a582daa66e3240838ddb9cf0f101824, type: 2}
+      propertyPath: shotClip
+      value: 
+      objectReference: {fileID: 8300000, guid: f075c7974aa0d47c8bc8247642a2e015, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8a582daa66e3240838ddb9cf0f101824, type: 2}
   m_RootGameObject: {fileID: 1085268363}
