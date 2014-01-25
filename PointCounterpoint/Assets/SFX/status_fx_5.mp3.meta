@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: fc608643a5192424ab1f6a87cacd1509
+=======
+guid: 851277073a0cf44d59bd95676d0223d7
+>>>>>>> added dragons and particles
 AudioImporter:
   serializedVersion: 4
   format: 0

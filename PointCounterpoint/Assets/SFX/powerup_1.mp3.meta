@@ -1,4 +1,5 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 63b8e4fb4b0e543febb7dce613042bfd
 AudioImporter:
   serializedVersion: 4
@@ -6,6 +7,15 @@ AudioImporter:
   quality: .5
   stream: 1
   3D: 0
+=======
+guid: 5c131690fe7b74f119db0ddc7c99d13b
+AudioImporter:
+  serializedVersion: 4
+  format: 0
+  quality: -1
+  stream: 1
+  3D: 1
+>>>>>>> added dragons and particles
   forceToMono: 0
   useHardware: 0
   loopable: 0
