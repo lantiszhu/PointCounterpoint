@@ -19,8 +19,8 @@ function Start () {
 	dist = (transform.position - Camera.main.transform.position).z;
 	leftClamp = Camera.main.ViewportToWorldPoint(Vector3(0, 0, dist)).x + .5;
 	rightClamp = Camera.main.ViewportToWorldPoint(Vector3(1, 0, dist)).x - .5;
-	topClamp = Camera.main.ViewportToWorldPoint(Vector3(0, 1, dist)).y ;
-	bottomClamp = Camera.main.ViewportToWorldPoint(Vector3(0, 0, dist)).y;
+	topClamp = Camera.main.ViewportToWorldPoint(Vector3(0, 1, dist)).y  - .5;
+	bottomClamp = Camera.main.ViewportToWorldPoint(Vector3(0, 0, dist)).y + .5;
 	shotTimer = Time.time;
 	playerAudio = GetComponent(AudioSource);
 	playerAudio.clip = shotClip;
