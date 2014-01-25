@@ -55,9 +55,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3dc183df0b0d4467b0fade35dfc4398, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerSpeed: 10
+  playerSpeed: 30
   topClamp: 0
   bulletPrefab: {fileID: 100000, guid: 0175c107b153b44ebb20975ac00e7725, type: 2}
+  playerNum: 1
+  gamepad: 0
+  keyboardPlayer: 1
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1

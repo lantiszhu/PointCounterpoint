@@ -122,25 +122,25 @@ public static class GamePad
 	}
 	
 	//Return the input stick
-	public static Vector3 GetLeftStick(Pad pad, int player) {
+	public static Vector2 GetLeftStick(Pad pad, int player) {
 		switch(pad) {
 			case Pad.XB:
-				return new Vector3(Input.GetAxis(FormatAxis("XB","LS","X",player)), (Input.GetAxis(FormatAxis("XB","LS","Y",player)) * -1), 0);
+				return new Vector2(Input.GetAxis(FormatAxis("XB","LS","X",player)), (Input.GetAxis(FormatAxis("XB","LS","Y",player)) * -1));
 			case Pad.PS:
-				return new Vector3(Input.GetAxis(FormatAxis("PS","LS","X",player)), (Input.GetAxis(FormatAxis("PS","LS","Y",player)) * -1), 0);
+				return new Vector2(Input.GetAxis(FormatAxis("PS","LS","X",player)), (Input.GetAxis(FormatAxis("PS","LS","Y",player)) * -1));
 		}
-		return Vector3.zero;
+		return Vector2.zero;
 	}
 	
 	//What is the value of the right analog stick
-	public static Vector3 GetRightStick(Pad pad, int player) {
+	public static Vector2 GetRightStick(Pad pad, int player) {
 		switch(pad) {
 			case Pad.XB:
-				return new Vector3(Input.GetAxis(FormatAxis("XB","RS","X",player)), (Input.GetAxis(FormatAxis("XB","RS","Y",player)) * -1), 0);
+				return new Vector2(Input.GetAxis(FormatAxis("XB","RS","X",player)), (Input.GetAxis(FormatAxis("XB","RS","Y",player)) * -1));
 			case Pad.PS:
-				return new Vector3(Input.GetAxis(FormatAxis("PS","RS","X",player)), (Input.GetAxis(FormatAxis("PS","RS","Y",player)) * -1), 0);
+				return new Vector2(Input.GetAxis(FormatAxis("PS","RS","X",player)), (Input.GetAxis(FormatAxis("PS","RS","Y",player)) * -1));
 		}
-		return Vector3.zero;
+		return Vector2.zero;
 	}
 }
 

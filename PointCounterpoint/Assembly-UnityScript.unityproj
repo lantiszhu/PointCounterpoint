@@ -49,6 +49,10 @@
      <Compile Include="Assets\Scripts\Bullet.js" />
      <Compile Include="Assets\Scripts\Player.js" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
+      <Project>{F1AAB8A4-CE97-5884-3D34-F9364DD3079A}</Project>      <Name>Assembly-CSharp-firstpass</Name>    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
 	   Other similar extension points exist, see Microsoft.Common.targets.
