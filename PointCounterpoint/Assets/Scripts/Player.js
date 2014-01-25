@@ -10,13 +10,20 @@ public var bulletPrefab : GameObject; //bullet to spawn when we shoot
 public var playerNum = 1; //player number
 public var gamepad = Pad.XB; //gamepad value
 public var keyboardPlayer = 1;
+var shotTimer : float;
+public var shotCooldown : float = 1;
+var playerAudio : AudioSource;
+public var shotClip : AudioClip;
 
 function Start () {
 	dist = (transform.position - Camera.main.transform.position).z;
-	leftClamp = Camera.main.ViewportToWorldPoint(Vector3(0, 0, dist)).x;
-	rightClamp = Camera.main.ViewportToWorldPoint(Vector3(1, 0, dist)).x;
-	topClamp = Camera.main.ViewportToWorldPoint(Vector3(0, 1, dist)).y;
+	leftClamp = Camera.main.ViewportToWorldPoint(Vector3(0, 0, dist)).x + .5;
+	rightClamp = Camera.main.ViewportToWorldPoint(Vector3(1, 0, dist)).x - .5;
+	topClamp = Camera.main.ViewportToWorldPoint(Vector3(0, 1, dist)).y ;
 	bottomClamp = Camera.main.ViewportToWorldPoint(Vector3(0, 0, dist)).y;
+	shotTimer = Time.time;
+	playerAudio = GetComponent(AudioSource);
+	playerAudio.clip = shotClip;
 }
 
 function FixedUpdate () {
@@ -79,14 +86,20 @@ function FixedUpdate () {
 * */
 function ShootBullet(dir : Vector2) {
 	// instantiate a bullet
-	var b : GameObject = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
-	
-	// get the Bullet script from the instantiated bullet
-	var bulletScript : Bullet = b.GetComponent("Bullet");
-	
-	// set the playerScript to this playerScript
-	bulletScript.playerScript = this;
-	Debug.Log(dir);
-	// set the direction the bullet should travel
-	bulletScript.dir = dir;
+	if (Time.time - shotTimer >= shotCooldown) {
+		var b : GameObject = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
+		
+		// get the Bullet script from the instantiated bullet
+		var bulletScript : Bullet = b.GetComponent("Bullet");
+		
+		// set the playerScript to this playerScript
+		bulletScript.playerScript = this;
+		Debug.Log(dir);
+		// set the direction the bullet should travel
+		bulletScript.dir = dir;
+		
+		playerAudio.Play();
+		
+		shotTimer = Time.time;
+	}
 }
