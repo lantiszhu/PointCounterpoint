@@ -44,8 +44,8 @@ function Start () {
 }
 
 function Update () {
-	enemySpeed += 0.00005;
-	enemyPoints += 0.001;
+	enemySpeed += 0.00001;
+	enemyPoints += 0.01;
 	if (lastSpawnTime + spawnDelay < Time.time) {
 		// choose a random spawn location
 		var l = Random.Range(0, 8);

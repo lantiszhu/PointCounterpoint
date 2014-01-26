@@ -28,12 +28,12 @@ function Start () {
 	
 	if (type == 1) {
 		// get player 2 to target
-		target = GameObject.Find("Blue Player");
+		target = GameObject.Find("Red Player");
 		// be red
 		GetComponent(SpriteRenderer).color = redColor;
 	} else {
 		// get player 1 to target
-		target = GameObject.Find("Red Player");
+		target = GameObject.Find("Blue Player");
 		// be blue
 		GetComponent(SpriteRenderer).color = blueColor;
 	}
@@ -79,8 +79,8 @@ function OnCollisionEnter2D(col : Collision2D) {
 	}
 	// handle player collisions
 	else if (col.gameObject.tag == "Player") {
-		if ((col.gameObject.name == "Red Player" && type == 2)
-			|| (col.gameObject.name == "Blue Player" && type == 1)) {
+		if ((col.gameObject.name == "Red Player" && type == 1)
+			|| (col.gameObject.name == "Blue Player" && type == 2)) {
 			
 			playerScript = col.gameObject.GetComponent(Player);
 			
