@@ -7,6 +7,10 @@ public var points : float = 0;
 // player's movement speed
 public var playerSpeed = 30;
 
+public var deadSprite : Sprite;
+
+var dead = false;
+
 // screen clamping variables
 public var dist;
 public var leftClamp : float;
@@ -26,6 +30,8 @@ var shotTimer : float;
 public var shotCooldown : float = 1;
 var playerAudio : AudioSource;
 
+public var liveObjects = new GameObject[3];
+
 function Start () {
 	dist = (transform.position - Camera.main.transform.position).z;
 	leftClamp = Camera.main.ViewportToWorldPoint(Vector3(0, 0, dist)).x;
@@ -44,7 +50,7 @@ function FixedUpdate () {
 	var rightStick : Vector2 = GamePad.GetRightStick(gamepad, playerNum);
 
 	// move based on left stick
-	rigidbody2D.transform.position += leftStick * playerSpeed * Time.deltaTime;
+	MovePlayer(leftStick);
 	
 	// rotate the player with left stick
 	if (leftStick.y != 0 || leftStick.x != 0) {
@@ -126,6 +132,8 @@ function FixedUpdate () {
 * Move the player
 * */
 function MovePlayer(dir : Vector2) {
+	if (dead)
+		return;
 	rigidbody2D.transform.position += dir * playerSpeed * Time.deltaTime;
 }
 
@@ -150,4 +158,31 @@ function ShootBullet(dir : Vector2) {
 		
 		shotTimer = Time.time;
 	}
+}
+
+function hurtPlayer() {
+	health -= 1;
+	
+	for (var i = 0; i < liveObjects.length; i++) {//life : GameObject in liveObjects) {
+		var life : GameObject = liveObjects[i];
+		if (life != null) {
+			Destroy(life);
+			if (i == liveObjects.length - 1) {
+				dead = true;
+				gameObject.GetComponent(SpriteRenderer).sprite = deadSprite;
+				gameObject.transform.localScale = Vector3(0.75, 0.75, gameObject.transform.localScale.z);
+			}
+			return;
+		}
+	}
+	
+	dead = true;
+	gameObject.GetComponent(SpriteRenderer).sprite = deadSprite;
+	gameObject.transform.localScale = Vector3(0.75, 0.75, gameObject.transform.localScale.z);
+}
+
+function Score() {
+	if (dead)
+		return;
+	points += 1;
 }

@@ -65,7 +65,7 @@ function OnCollisionEnter2D(col : Collision2D) {
 			playerScript = col.gameObject.GetComponent(Bullet).playerScript;
 			
 			// give the player points
-			playerScript.points += 1;
+			playerScript.Score();
 			
 			// destroy the bullet
 			GameObject.Destroy(col.gameObject);
@@ -85,7 +85,7 @@ function OnCollisionEnter2D(col : Collision2D) {
 			playerScript = col.gameObject.GetComponent(Player);
 			
 			// hurt the player
-			playerScript.health -= 1;
+			playerScript.hurtPlayer();
 			
 			// Instantiate an explosion
 			Instantiate(explosion, transform.position, Quaternion.identity);

@@ -252,7 +252,7 @@ MonoBehaviour:
     m_Name: textfield
     m_Normal:
       m_Background: {fileID: 2800000, guid: d92f4e169f497844b9c4da3bf9013f4e, type: 3}
-      m_TextColor: {r: .282352954, g: .156862751, b: .0470588244, a: 1}
+      m_TextColor: {r: 1, g: .815686285, b: .654411793, a: 1}
     m_Hover:
       m_Background: {fileID: 0}
       m_TextColor: {r: .282352954, g: .156862751, b: .0470588244, a: 1}
@@ -294,17 +294,17 @@ MonoBehaviour:
       m_Right: 0
       m_Top: 0
       m_Bottom: 0
-    m_Font: {fileID: 0}
-    m_FontSize: 0
+    m_Font: {fileID: 12800000, guid: 5c366876ae2f6574f942cd03913ff2a8, type: 3}
+    m_FontSize: 36
     m_FontStyle: 0
-    m_Alignment: 0
+    m_Alignment: 7
     m_WordWrap: 0
     m_RichText: 1
     m_TextClipping: 1
     m_ImagePosition: 3
     m_ContentOffset: {x: 0, y: 0}
     m_FixedWidth: 0
-    m_FixedHeight: 26
+    m_FixedHeight: 40
     m_StretchWidth: 1
     m_StretchHeight: 0
   m_textArea:
