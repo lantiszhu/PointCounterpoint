@@ -9,6 +9,8 @@ public var playerSpeed = 30;
 
 public var deadSprite : Sprite;
 
+public var enemyScript : EnemyGenerator;
+
 var dead = false;
 
 // screen clamping variables
@@ -184,5 +186,6 @@ function hurtPlayer() {
 function Score() {
 	if (dead)
 		return;
-	points += 1;
+	Debug.Log("Points: " + enemyScript.enemyPoints);
+	points += Mathf.FloorToInt(enemyScript.enemyPoints);
 }

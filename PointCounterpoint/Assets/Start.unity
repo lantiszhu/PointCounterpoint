@@ -4957,6 +4957,7 @@ MonoBehaviour:
   points: 0
   playerSpeed: 20
   deadSprite: {fileID: 21300024, guid: 16077b8382cc34253b6c49dd28e0a146, type: 3}
+  enemyScript: {fileID: 0}
   dead: 0
   leftClamp: 0
   rightClamp: 0
@@ -14282,6 +14283,7 @@ MonoBehaviour:
   points: 0
   playerSpeed: 20
   deadSprite: {fileID: 21300026, guid: 16077b8382cc34253b6c49dd28e0a146, type: 3}
+  enemyScript: {fileID: 1294275996}
   dead: 0
   leftClamp: 0
   rightClamp: 0
@@ -18267,6 +18269,7 @@ MonoBehaviour:
   topClamp: 0
   bottomClamp: 0
   clampOffset: .5
+  enemySpeed: .200000003
   spawnLocations:
   - {x: 0, y: 0}
   - {x: 0, y: 0}
@@ -20585,6 +20588,10 @@ Prefab:
       value: 
       objectReference: {fileID: 21300026, guid: 16077b8382cc34253b6c49dd28e0a146,
         type: 3}
+    - target: {fileID: 11400000, guid: 8a582daa66e3240838ddb9cf0f101824, type: 2}
+      propertyPath: enemyScript
+      value: 
+      objectReference: {fileID: 1294275996}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8a582daa66e3240838ddb9cf0f101824, type: 2}
   m_RootGameObject: {fileID: 1085268363}

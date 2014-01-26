@@ -12,6 +12,8 @@ public var rightClamp : float;
 public var topClamp : float;
 public var bottomClamp : float;
 public var clampOffset : float = 0.5;
+public var enemySpeed = 0.2;
+public var enemyPoints : float = 1;
 
 public var spawnLocations = new Vector2[8];
 
@@ -42,6 +44,8 @@ function Start () {
 }
 
 function Update () {
+	enemySpeed += 0.00005;
+	enemyPoints += 0.001;
 	if (lastSpawnTime + spawnDelay < Time.time) {
 		// choose a random spawn location
 		var l = Random.Range(0, 8);
@@ -50,6 +54,8 @@ function Update () {
 		
 		// instantiate an enemy
 		var e = Instantiate(enemy, spawnLocation, Quaternion.identity);
+		Debug.Log("Enemy speed: " + enemySpeed);
+		e.GetComponent(Enemy).speed = enemySpeed;
 		
 		// store spawn time
 		lastSpawnTime = Time.time;
