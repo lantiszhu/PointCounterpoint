@@ -98,7 +98,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3dc183df0b0d4467b0fade35dfc4398, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerSpeed: 30
+  playerSpeed: 20
   leftClamp: 0
   rightClamp: 0
   topClamp: 0
@@ -107,6 +107,10 @@ MonoBehaviour:
   playerNum: 1
   gamepad: 0
   keyboardPlayer: 2
+  shotTimer: 0
+  shotCooldown: 1
+  playerAudio: {fileID: 0}
+  clampOffset: 1.5
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -13,13 +13,14 @@ public var keyboardPlayer = 1;
 var shotTimer : float;
 public var shotCooldown : float = 1;
 var playerAudio : AudioSource;
+public var clampOffset : float;
 
 function Start () {
 	dist = (transform.position - Camera.main.transform.position).z;
-	leftClamp = Camera.main.ViewportToWorldPoint(Vector3(0, 0, dist)).x + .5;
-	rightClamp = Camera.main.ViewportToWorldPoint(Vector3(1, 0, dist)).x - .5;
-	topClamp = Camera.main.ViewportToWorldPoint(Vector3(0, 1, dist)).y  - .5;
-	bottomClamp = Camera.main.ViewportToWorldPoint(Vector3(0, 0, dist)).y + .5;
+	leftClamp = Camera.main.ViewportToWorldPoint(Vector3(0, 0, dist)).x;
+	rightClamp = Camera.main.ViewportToWorldPoint(Vector3(1, 0, dist)).x;
+	topClamp = Camera.main.ViewportToWorldPoint(Vector3(0, 1, dist)).y;
+	bottomClamp = Camera.main.ViewportToWorldPoint(Vector3(0, 0, dist)).y;
 	shotTimer = Time.time;
 	playerAudio = GetComponent(AudioSource);
 }
@@ -75,8 +76,8 @@ function FixedUpdate () {
 	}
 	
 	// clamp position to the edges of the screen
-	transform.position.x = Mathf.Clamp(transform.position.x, leftClamp, rightClamp);
-	transform.position.y = Mathf.Clamp(transform.position.y, bottomClamp, topClamp);
+	transform.position.x = Mathf.Clamp(transform.position.x, leftClamp  + clampOffset, rightClamp - clampOffset);
+	transform.position.y = Mathf.Clamp(transform.position.y, bottomClamp + clampOffset, topClamp - clampOffset);
 }
 
 /**

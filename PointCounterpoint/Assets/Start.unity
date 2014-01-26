@@ -157,7 +157,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3dc183df0b0d4467b0fade35dfc4398, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerSpeed: 30
+  playerSpeed: 20
   leftClamp: 0
   rightClamp: 0
   topClamp: 0
@@ -169,6 +169,7 @@ MonoBehaviour:
   shotTimer: 0
   shotCooldown: .200000003
   playerAudio: {fileID: 0}
+  clampOffset: 1.5
 --- !u!96 &628104083
 TrailRenderer:
   m_ObjectHideFlags: 0
@@ -1477,7 +1478,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3dc183df0b0d4467b0fade35dfc4398, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerSpeed: 30
+  playerSpeed: 20
   leftClamp: 0
   rightClamp: 0
   topClamp: 0
@@ -1489,6 +1490,7 @@ MonoBehaviour:
   shotTimer: 0
   shotCooldown: 1
   playerAudio: {fileID: 0}
+  clampOffset: 1.5
 --- !u!50 &1085268365
 Rigidbody2D:
   m_ObjectHideFlags: 0

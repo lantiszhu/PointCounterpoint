@@ -39,9 +39,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c044d1613948b45fca3f1317783e1753, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 50
+  speed: 40
   playerScript: {fileID: 0}
   dir: {x: 0, y: 0}
+  clampOffset: .25
+  bulletWallParticles: {fileID: 100000, guid: 0f2475b19ac9a441cbde08bdd111147e, type: 2}
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1
