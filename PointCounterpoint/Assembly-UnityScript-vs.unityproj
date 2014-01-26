@@ -51,6 +51,10 @@
      <Compile Include="Assets\Scripts\Enemy.js" />
      <Compile Include="Assets\Scripts\EnemyGenerator.js" />
      <Compile Include="Assets\Scripts\Player.js" />
+     <None Include="Assets\Standard Assets\Particles\Sources\Shaders\Particle Alpha Blend (Queue +100).shader" />
+ <Reference Include="Library\ScriptAssemblies\Assembly-UnityScript-firstpass">
+ <HintPath>Library\ScriptAssemblies\Assembly-UnityScript-firstpass.dll</HintPath>
+ </Reference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp-firstpass-vs.csproj">

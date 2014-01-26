@@ -45,19 +45,37 @@ function FixedUpdate () {
 	* Arrow key movement below
 	* */
 
+	var moveVector : Vector2 = Vector2.zero;
+	var keyboardMove = false;
 	// move left and right with keyboard
 	if (Input.GetKey(KeyCode.A) && playerNum == keyboardPlayer) {
-		rigidbody2D.transform.position -= Vector2.right * playerSpeed * Time.deltaTime;
+		moveVector -= Vector2.right;
+		keyboardMove = true;
 	} else if (Input.GetKey(KeyCode.D) && playerNum == keyboardPlayer) {
-		rigidbody2D.transform.position += Vector2.right * playerSpeed * Time.deltaTime;
+		moveVector += Vector2.right;
+		keyboardMove = true;
 	}
 	
 	// move up and down with keyboard
 	if (Input.GetKey(KeyCode.W) && playerNum == keyboardPlayer) {
-		rigidbody2D.transform.position += Vector2.up * playerSpeed * Time.deltaTime;
+		moveVector += Vector2.up;
+		keyboardMove = true;
 	} else if (Input.GetKey(KeyCode.S) && playerNum == keyboardPlayer) {
-		rigidbody2D.transform.position -= Vector2.up * playerSpeed * Time.deltaTime;
+		moveVector -= Vector2.up;
+		keyboardMove = true;
 	}
+	
+	if (keyboardMove) {
+		MovePlayer(moveVector);
+		
+		// rotate based on movement
+		var rotA : float = (Mathf.Atan2(moveVector.y, moveVector.x) * Mathf.Rad2Deg) - 90;
+		rigidbody2D.transform.rotation = Quaternion.AngleAxis(rotA, Vector3.forward);
+	}
+	
+	/*
+	* Shooting below
+	* */
 	
 	// Shooting with right stick
 	if (rightStick.magnitude != 0) {
@@ -65,19 +83,39 @@ function FixedUpdate () {
 	}
 	
 	// Shooting with keyboard
+	var shootVector : Vector2 = Vector2.zero;
+	var keyboardShoot = false;
+	
 	if (Input.GetKey(KeyCode.LeftArrow) && playerNum == keyboardPlayer) {
-		ShootBullet(-Vector2.right);
+		shootVector += -Vector2.right;
+		keyboardShoot = true;
 	} else if (Input.GetKey(KeyCode.RightArrow) && playerNum == keyboardPlayer) {
-		ShootBullet(Vector2.right);
-	} else if (Input.GetKey(KeyCode.UpArrow) && playerNum == keyboardPlayer) {
-		ShootBullet(Vector2.up);
+		shootVector += Vector2.right;
+		keyboardShoot = true;
+	}
+	
+	if (Input.GetKey(KeyCode.UpArrow) && playerNum == keyboardPlayer) {
+		shootVector += Vector2.up;
+		keyboardShoot = true;
 	} else if (Input.GetKey(KeyCode.DownArrow) && playerNum == keyboardPlayer) {
-		ShootBullet(-Vector2.up);
+		shootVector += -Vector2.up;
+		keyboardShoot = true;
+	}
+	
+	if (keyboardShoot) {
+		ShootBullet(shootVector);
 	}
 	
 	// clamp position to the edges of the screen
 	transform.position.x = Mathf.Clamp(transform.position.x, leftClamp  + clampOffset, rightClamp - clampOffset);
 	transform.position.y = Mathf.Clamp(transform.position.y, bottomClamp + clampOffset, topClamp - clampOffset);
+}
+
+/**
+* Move the player
+* */
+function MovePlayer(dir : Vector2) {
+	rigidbody2D.transform.position += dir * playerSpeed * Time.deltaTime;
 }
 
 /**
