@@ -11,25 +11,33 @@ public var clampOffset : float = 0.5;
 public var type;
 public var target : GameObject;
 
+public var redColor : Color32;
+public var blueColor : Color32;
+
 function Start () {
 	dist = (transform.position - Camera.main.transform.position).z;
 	leftClamp = Camera.main.ViewportToWorldPoint(Vector3(0, 0, dist)).x;
 	rightClamp = Camera.main.ViewportToWorldPoint(Vector3(1, 0, dist)).x;
 	topClamp = Camera.main.ViewportToWorldPoint(Vector3(0, 1, dist)).y;
 	bottomClamp = Camera.main.ViewportToWorldPoint(Vector3(0, 0, dist)).y;
-}
-
-function Update () {
+	
+	// pick one or two to represent enemy type
+	type = Random.Range(1, 3);
+	
 	if (type == 1) {
 		// get player 2 to target
 		target = GameObject.Find("Blue Player");
 		// be red
+		GetComponent(SpriteRenderer).color = redColor;
 	} else {
 		// get player 1 to target
 		target = GameObject.Find("Red Player");
 		// be blue
+		GetComponent(SpriteRenderer).color = blueColor;
 	}
-	
+}
+
+function Update () {
 	// go after target
 	transform.position = Vector3.MoveTowards(transform.position, target.transform.position, speed);
 
@@ -41,7 +49,10 @@ function Update () {
 function OnCollisionEnter2D(col : Collision2D) {
 	Debug.Log("collision");
 	if (col.gameObject.tag == "Bullet") {
-		GameObject.Destroy(col.gameObject);
-		GameObject.Destroy(gameObject);
+		if ((col.gameObject.name == "FireBullet(Clone)" && type == 2) 
+			|| (col.gameObject.name == "IceBullet(Clone)" && type == 1)) {
+			GameObject.Destroy(col.gameObject);
+			GameObject.Destroy(gameObject);
+		}
 	}
 }

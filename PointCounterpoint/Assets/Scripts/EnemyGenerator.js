@@ -48,12 +48,8 @@ function Update () {
 		//Debug.Log("spawn location: "+l);
 		spawnLocation = spawnLocations[l];
 		
-		// pick one or two to represent enemy type
-		var chosenType = Random.Range(1, 3);
-		
 		// instantiate an enemy
 		var e = Instantiate(enemy, spawnLocation, Quaternion.identity);
-		e.GetComponent(Enemy).type = chosenType;
 		
 		// store spawn time
 		lastSpawnTime = Time.time;
