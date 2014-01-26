@@ -43,7 +43,7 @@ MonoBehaviour:
   playerScript: {fileID: 0}
   dir: {x: 0, y: 0}
   clampOffset: .25
-  bulletWallParticles: {fileID: 100000, guid: 0f2475b19ac9a441cbde08bdd111147e, type: 2}
+  bulletWallParticles: {fileID: 100000, guid: fd50eb374ac44432989a83ae764d3e9c, type: 2}
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1

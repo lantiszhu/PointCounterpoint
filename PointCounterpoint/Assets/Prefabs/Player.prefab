@@ -108,7 +108,7 @@ MonoBehaviour:
   gamepad: 0
   keyboardPlayer: 2
   shotTimer: 0
-  shotCooldown: 1
+  shotCooldown: .200000003
   playerAudio: {fileID: 0}
   clampOffset: 1.5
 --- !u!212 &21200000
