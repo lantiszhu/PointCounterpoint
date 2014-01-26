@@ -120,6 +120,17 @@ public static class GamePad
 		}
 		return false;
 	}
+
+	//Return the input for Start button
+	public static bool StartButton(Pad pad, int player) {
+		switch(pad) {
+		case Pad.XB:
+			return Input.GetKeyDown(FormatJoystick(player,9));
+		case Pad.PS:
+			return false;
+		}
+		return false;
+	}
 	
 	//Return the input stick
 	public static Vector2 GetLeftStick(Pad pad, int player) {

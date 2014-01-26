@@ -9,7 +9,7 @@ function Start () {
 }
 
 function Update () {
-	if (Input.GetKey(KeyCode.Space)) {
+	if (Input.GetKey(KeyCode.Space) || GamePad.StartButton(Pad.XB, 1) || GamePad.StartButton(Pad.XB, 2)) {
 		Application.LoadLevel(Application.loadedLevel + 1);
 	}
 }

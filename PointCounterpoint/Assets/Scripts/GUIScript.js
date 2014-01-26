@@ -6,13 +6,21 @@ var mySkin : GUISkin;
 var p1Script : Player;
 var p2Script : Player;
 
+var gameOver = false;
+
 function Start () {
 	p1Script = GameObject.Find("Red Player").GetComponent(Player);
 	p2Script = GameObject.Find("Blue Player").GetComponent(Player);
+	
+	Time.timeScale = 1;
 }
 
 function Update () {
-
+	// both players are dead
+	if (p1Script.dead && p2Script.dead) {
+		// GAME OVER
+		Time.timeScale = 0;
+	}
 }
 
 function OnGUI () {
@@ -30,4 +38,8 @@ function OnGUI () {
 	
 	//GUILayout.Label(p1Script.health.ToString());
 	//GUILayout.Label(p2Script.health.ToString());
+	
+	if (gameOver) {
+		
+	}
 }
