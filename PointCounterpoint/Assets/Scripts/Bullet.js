@@ -32,9 +32,9 @@ function setParticlesRotation(particles : GameObject) {
 		particles.transform.rotation = Quaternion.Euler(-90, 0, 0);
 	}
 	else if (transform.position.x > playerScript.rightClamp - clampOffset) {
-		particles.transform.rotation = Quaternion.Euler(0, -270, 270);
+		particles.transform.rotation = Quaternion.Euler(0, -90, 90);
 	}
 	else {
-		particles.transform.rotation = Quaternion.Euler(0, -90, 90);
+		particles.transform.rotation = Quaternion.Euler(0, -270, 270);
 	}
 }
