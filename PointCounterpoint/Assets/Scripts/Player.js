@@ -1,19 +1,30 @@
 ﻿#pragma strict
 
+// player's health
+public var health : int = 3;
+// player's points
+public var points : float = 0;
+// player's movement speed
 public var playerSpeed = 30;
+
+// screen clamping variables
 public var dist;
 public var leftClamp : float;
 public var rightClamp : float;
 public var topClamp : float;
 public var bottomClamp : float;
-public var bulletPrefab : GameObject; //bullet to spawn when we shoot
-public var playerNum = 1; //player number
-public var gamepad = Pad.XB; //gamepad value
+public var clampOffset : float;
+
+// bullet to spawn when we shoot
+public var bulletPrefab : GameObject;
+// player number
+public var playerNum = 1;
+// gamepad value
+public var gamepad = Pad.XB;
 public var keyboardPlayer = 1;
 var shotTimer : float;
 public var shotCooldown : float = 1;
 var playerAudio : AudioSource;
-public var clampOffset : float;
 
 function Start () {
 	dist = (transform.position - Camera.main.transform.position).z;

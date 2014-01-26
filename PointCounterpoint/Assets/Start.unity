@@ -158,11 +158,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3dc183df0b0d4467b0fade35dfc4398, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 3
+  points: 0
   playerSpeed: 20
   leftClamp: 0
   rightClamp: 0
   topClamp: 0
   bottomClamp: 0
+  clampOffset: 1.5
   bulletPrefab: {fileID: 100000, guid: 0175c107b153b44ebb20975ac00e7725, type: 2}
   playerNum: 1
   gamepad: 0
@@ -170,7 +173,6 @@ MonoBehaviour:
   shotTimer: 0
   shotCooldown: .200000003
   playerAudio: {fileID: 0}
-  clampOffset: 1.5
 --- !u!96 &628104083
 TrailRenderer:
   m_ObjectHideFlags: 0
@@ -1674,7 +1676,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1023782110}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d29c3055cd5591a40a316a83128634e1, type: 3}
   m_Name: 
@@ -1718,11 +1720,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3dc183df0b0d4467b0fade35dfc4398, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 3
+  points: 0
   playerSpeed: 20
   leftClamp: 0
   rightClamp: 0
   topClamp: 0
   bottomClamp: 0
+  clampOffset: 1.5
   bulletPrefab: {fileID: 100000, guid: a058457e9ba474e68b4e221319f69b9d, type: 2}
   playerNum: 2
   gamepad: 0
@@ -1730,7 +1735,6 @@ MonoBehaviour:
   shotTimer: 0
   shotCooldown: .200000003
   playerAudio: {fileID: 0}
-  clampOffset: 1.5
 --- !u!50 &1085268365
 Rigidbody2D:
   m_ObjectHideFlags: 0
