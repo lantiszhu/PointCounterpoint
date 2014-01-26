@@ -46,16 +46,26 @@ function Update () {
 	// clamp position to the edges of the screen
 	transform.position.x = Mathf.Clamp(transform.position.x, leftClamp  + clampOffset, rightClamp - clampOffset);
 	transform.position.y = Mathf.Clamp(transform.position.y, bottomClamp + clampOffset, topClamp - clampOffset);
+	
+	// spin slowly over time
+	transform.Rotate(Vector3.forward, 1);
 }
 
 /**
 * Handle collisions
 * */
 function OnCollisionEnter2D(col : Collision2D) {
+	var playerScript : Player;
+
 	// handle bullet collisions
 	if (col.gameObject.tag == "Bullet") {
 		if ((col.gameObject.name == "FireBullet(Clone)" && type == 2) 
 			|| (col.gameObject.name == "IceBullet(Clone)" && type == 1)) {
+			
+			playerScript = col.gameObject.GetComponent(Bullet).playerScript;
+			
+			// give the player points
+			playerScript.points += 1;
 			
 			// destroy the bullet
 			GameObject.Destroy(col.gameObject);
@@ -71,6 +81,11 @@ function OnCollisionEnter2D(col : Collision2D) {
 	else if (col.gameObject.tag == "Player") {
 		if ((col.gameObject.name == "Red Player" && type == 2)
 			|| (col.gameObject.name == "Blue Player" && type == 1)) {
+			
+			playerScript = col.gameObject.GetComponent(Player);
+			
+			// hurt the player
+			playerScript.health -= 1;
 			
 			// Instantiate an explosion
 			Instantiate(explosion, transform.position, Quaternion.identity);
