@@ -170,6 +170,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 240037537}
   - 212: {fileID: 240037541}
+  - 114: {fileID: 240037538}
   m_Layer: 0
   m_Name: IceLife3
   m_TagString: Bullet
@@ -189,6 +190,18 @@ Transform:
   m_Children:
   - {fileID: 2058686243}
   m_Father: {fileID: 0}
+--- !u!114 &240037538
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400002, guid: 7487de41bdd5e440a87ff64b24dd92a7,
+    type: 2}
+  m_PrefabInternal: {fileID: 1974634808}
+  m_GameObject: {fileID: 240037536}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11b2d649fdbea4b5ab93f7e32b2215b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &240037541
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1337,6 +1350,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 355280546}
   - 212: {fileID: 355280545}
+  - 114: {fileID: 355280542}
   m_Layer: 0
   m_Name: IceLife2
   m_TagString: Bullet
@@ -1344,6 +1358,18 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &355280542
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400002, guid: 7487de41bdd5e440a87ff64b24dd92a7,
+    type: 2}
+  m_PrefabInternal: {fileID: 1272095194}
+  m_GameObject: {fileID: 355280541}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11b2d649fdbea4b5ab93f7e32b2215b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &355280545
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3529,6 +3555,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 505680984}
   - 212: {fileID: 505680986}
+  - 114: {fileID: 505680985}
   m_Layer: 0
   m_Name: FireLife1
   m_TagString: Bullet
@@ -3548,6 +3575,18 @@ Transform:
   m_Children:
   - {fileID: 795863687}
   m_Father: {fileID: 0}
+--- !u!114 &505680985
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400000, guid: 11767fa91295a44069ee784ae03b6039,
+    type: 2}
+  m_PrefabInternal: {fileID: 2044078194}
+  m_GameObject: {fileID: 505680983}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11b2d649fdbea4b5ab93f7e32b2215b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &505680986
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -20286,6 +20325,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1477389035}
   - 212: {fileID: 1477389037}
+  - 114: {fileID: 1477389036}
   m_Layer: 0
   m_Name: FireLife2
   m_TagString: Bullet
@@ -20305,6 +20345,18 @@ Transform:
   m_Children:
   - {fileID: 885678789}
   m_Father: {fileID: 0}
+--- !u!114 &1477389036
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400000, guid: 11767fa91295a44069ee784ae03b6039,
+    type: 2}
+  m_PrefabInternal: {fileID: 2051122025}
+  m_GameObject: {fileID: 1477389034}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11b2d649fdbea4b5ab93f7e32b2215b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &1477389037
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -20338,6 +20390,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1557163093}
   - 212: {fileID: 1557163097}
+  - 114: {fileID: 1557163094}
   m_Layer: 0
   m_Name: IceLife1
   m_TagString: Bullet
@@ -20357,6 +20410,18 @@ Transform:
   m_Children:
   - {fileID: 794445630}
   m_Father: {fileID: 0}
+--- !u!114 &1557163094
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400002, guid: 7487de41bdd5e440a87ff64b24dd92a7,
+    type: 2}
+  m_PrefabInternal: {fileID: 1144860985}
+  m_GameObject: {fileID: 1557163092}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11b2d649fdbea4b5ab93f7e32b2215b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &1557163097
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -22783,6 +22848,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1764309411}
   - 212: {fileID: 1764309413}
+  - 114: {fileID: 1764309412}
   m_Layer: 0
   m_Name: FireLife3
   m_TagString: Bullet
@@ -22802,6 +22868,18 @@ Transform:
   m_Children:
   - {fileID: 1416162432}
   m_Father: {fileID: 0}
+--- !u!114 &1764309412
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400000, guid: 11767fa91295a44069ee784ae03b6039,
+    type: 2}
+  m_PrefabInternal: {fileID: 932857227}
+  m_GameObject: {fileID: 1764309410}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11b2d649fdbea4b5ab93f7e32b2215b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &1764309413
 SpriteRenderer:
   m_ObjectHideFlags: 0
