@@ -57,7 +57,7 @@ function FixedUpdate () {
 	// rotate the player with left stick
 	if (leftStick.y != 0 || leftStick.x != 0) {
 		var rotAng : float = (Mathf.Atan2(leftStick.y, leftStick.x) * Mathf.Rad2Deg) - 90;
-		rigidbody2D.transform.rotation = Quaternion.AngleAxis(rotAng, Vector3.forward);
+		transform.rotation = Quaternion.AngleAxis(rotAng, Vector3.forward);
 	}
 	
 	/**
@@ -89,7 +89,7 @@ function FixedUpdate () {
 		
 		// rotate based on movement
 		var rotA : float = (Mathf.Atan2(moveVector.y, moveVector.x) * Mathf.Rad2Deg) - 90;
-		rigidbody2D.transform.rotation = Quaternion.AngleAxis(rotA, Vector3.forward);
+		transform.rotation = Quaternion.AngleAxis(rotA, Vector3.forward);
 	}
 	
 	/*
@@ -136,7 +136,7 @@ function FixedUpdate () {
 function MovePlayer(dir : Vector2) {
 	if (dead)
 		return;
-	rigidbody2D.transform.position += dir * playerSpeed * Time.deltaTime;
+	transform.position += dir * playerSpeed * Time.deltaTime;
 }
 
 /**
