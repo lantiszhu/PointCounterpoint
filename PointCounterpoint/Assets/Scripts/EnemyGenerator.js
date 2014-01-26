@@ -11,16 +11,17 @@ public var leftClamp : float;
 public var rightClamp : float;
 public var topClamp : float;
 public var bottomClamp : float;
+public var clampOffset : float = 0.5;
 
 public var spawnLocations = new Vector2[8];
 
 function Start () {
 	// get screen boundaries
 	dist = (transform.position - Camera.main.transform.position).z;
-	leftClamp = Camera.main.ViewportToWorldPoint(Vector3(0, 0, dist)).x + .5;
-	rightClamp = Camera.main.ViewportToWorldPoint(Vector3(1, 0, dist)).x - .5;
-	topClamp = Camera.main.ViewportToWorldPoint(Vector3(0, 1, dist)).y  - .5;
-	bottomClamp = Camera.main.ViewportToWorldPoint(Vector3(0, 0, dist)).y + .5;
+	leftClamp = Camera.main.ViewportToWorldPoint(Vector3(0, 0, dist)).x + clampOffset;
+	rightClamp = Camera.main.ViewportToWorldPoint(Vector3(1, 0, dist)).x - clampOffset;
+	topClamp = Camera.main.ViewportToWorldPoint(Vector3(0, 1, dist)).y  - clampOffset;
+	bottomClamp = Camera.main.ViewportToWorldPoint(Vector3(0, 0, dist)).y + clampOffset;
 	
 	// top left
 	spawnLocations[0] = Vector2(leftClamp, topClamp);
@@ -47,8 +48,12 @@ function Update () {
 		Debug.Log(l);
 		spawnLocation = spawnLocations[l];
 		
+		// pick one or two to represent enemy type
+		var chosenType = Random.Range(1, 3);
+		
 		// instantiate an enemy
 		var e = Instantiate(enemy, spawnLocation, Quaternion.identity);
+		//e.type = chosenType;
 		
 		// store spawn time
 		lastSpawnTime = Time.time;

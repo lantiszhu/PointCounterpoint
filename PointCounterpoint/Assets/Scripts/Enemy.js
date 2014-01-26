@@ -6,6 +6,9 @@ public var leftClamp : float;
 public var rightClamp : float;
 public var topClamp : float;
 public var bottomClamp : float;
+public var clampOffset : float = 0.5;
+
+public var type;
 
 function Start () {
 	dist = (transform.position - Camera.main.transform.position).z;
@@ -16,5 +19,9 @@ function Start () {
 }
 
 function Update () {
+	
 
+	// clamp position to the edges of the screen
+	transform.position.x = Mathf.Clamp(transform.position.x, leftClamp  + clampOffset, rightClamp - clampOffset);
+	transform.position.y = Mathf.Clamp(transform.position.y, bottomClamp + clampOffset, topClamp - clampOffset);
 }
