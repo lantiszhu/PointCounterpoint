@@ -131,7 +131,7 @@ function ShootBullet(dir : Vector2) {
 		
 		// set the playerScript to this playerScript
 		bulletScript.playerScript = this;
-		Debug.Log(dir);
+		//Debug.Log(dir);
 		// set the direction the bullet should travel
 		bulletScript.dir = dir;
 		

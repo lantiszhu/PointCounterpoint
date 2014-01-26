@@ -1,0 +1,207 @@
+fileFormatVersion: 2
+guid: 7758bd2f9c0794fcd895ba24d5db5871
+TextureImporter:
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 1024
+  textureSettings:
+    filterMode: -1
+    aniso: 1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: GGJ2014_Enemies_0
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 1549
+        width: 492
+        height: 476
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: GGJ2014_Enemies_1
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 1553
+        width: 493
+        height: 479
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: GGJ2014_Enemies_2
+      rect:
+        serializedVersion: 2
+        x: 1064
+        y: 1551
+        width: 175
+        height: 494
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: GGJ2014_Enemies_3
+      rect:
+        serializedVersion: 2
+        x: 1325
+        y: 1544
+        width: 172
+        height: 497
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: GGJ2014_Enemies_4
+      rect:
+        serializedVersion: 2
+        x: 1535
+        y: 1549
+        width: 506
+        height: 499
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: GGJ2014_Enemies_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1024
+        width: 505
+        height: 505
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: GGJ2014_Enemies_6
+      rect:
+        serializedVersion: 2
+        x: 515
+        y: 1032
+        width: 503
+        height: 505
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: GGJ2014_Enemies_7
+      rect:
+        serializedVersion: 2
+        x: 1089
+        y: 1051
+        width: 631
+        height: 462
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: GGJ2014_Enemies_8
+      rect:
+        serializedVersion: 2
+        x: 1833
+        y: 1031
+        width: 175
+        height: 496
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: GGJ2014_Enemies_9
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 520
+        width: 502
+        height: 499
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: GGJ2014_Enemies_10
+      rect:
+        serializedVersion: 2
+        x: 511
+        y: 519
+        width: 502
+        height: 498
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: GGJ2014_Enemies_11
+      rect:
+        serializedVersion: 2
+        x: 1027
+        y: 519
+        width: 502
+        height: 498
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: GGJ2014_Enemies_12
+      rect:
+        serializedVersion: 2
+        x: 1549
+        y: 527
+        width: 492
+        height: 476
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: GGJ2014_Enemies_13
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 103
+        width: 1537
+        height: 316
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: GGJ2014_Enemies_14
+      rect:
+        serializedVersion: 2
+        x: 1539
+        y: 259
+        width: 250
+        height: 252
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: GGJ2014_Enemies_15
+      rect:
+        serializedVersion: 2
+        x: 1805
+        y: 271
+        width: 230
+        height: 230
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: GGJ2014_Enemies_16
+      rect:
+        serializedVersion: 2
+        x: 1585
+        y: 45
+        width: 162
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: GGJ2014_Enemies_17
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 5
+        width: 255
+        height: 238
+      alignment: 0
+      pivot: {x: 0, y: 0}
+  spritePackingTag: 
+  userData: 

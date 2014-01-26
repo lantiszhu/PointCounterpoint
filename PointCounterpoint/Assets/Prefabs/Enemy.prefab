@@ -10,6 +10,7 @@ GameObject:
   - 4: {fileID: 400000}
   - 212: {fileID: 21200000}
   - 114: {fileID: 11400000}
+  - 60: {fileID: 6000000}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -28,6 +29,44 @@ Transform:
   m_LocalScale: {x: .300000012, y: .300000012, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
+--- !u!60 &6000000
+PolygonCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Poly:
+    m_Paths:
+    - - {x: 1.00999999, y: -.199999988}
+      - {x: 1.00999999, y: -.0799999982}
+      - {x: .829999983, y: 0}
+      - {x: .810000002, y: .340000004}
+      - {x: .569999993, y: .859999955}
+      - {x: .689999998, y: 1.27999997}
+      - {x: .329999983, y: 1.38}
+      - {x: -.0899999961, y: 1.74000001}
+      - {x: -.529999971, y: 1.74000001}
+      - {x: -.50999999, y: 1.67999995}
+      - {x: -.349999994, y: 1.25999999}
+      - {x: -.569999993, y: .919999957}
+      - {x: -.810000002, y: .919999957}
+      - {x: -.870000005, y: .879999995}
+      - {x: -.669999957, y: .299999982}
+      - {x: -.669999957, y: -.0399999991}
+      - {x: -.870000005, y: -.280000001}
+      - {x: -1.04999995, y: -.399999976}
+      - {x: -1.04999995, y: -.5}
+      - {x: -.409999996, y: -1.13999999}
+      - {x: -.209999993, y: -1.67999995}
+      - {x: -.0700000003, y: -1.75999999}
+      - {x: .109999999, y: -1.75999999}
+      - {x: .209999993, y: -1.74000001}
+      - {x: .429999977, y: -1.5}
+      - {x: .810000002, y: -.74000001}
+      - {x: .949999988, y: -.479999989}
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -39,12 +78,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35b33b50625cc48c79bc4b4b4cdafac2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 30
+  speed: .200000003
   leftClamp: 0
   rightClamp: 0
   topClamp: 0
   bottomClamp: 0
   clampOffset: .5
+  target: {fileID: 0}
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1
