@@ -108,6 +108,7 @@ MonoBehaviour:
   blueColor:
     serializedVersion: 2
     rgba: 4291079206
+  explosion: {fileID: 100012, guid: c476b802a4e0f46ad84a30dff85d71f4, type: 2}
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1

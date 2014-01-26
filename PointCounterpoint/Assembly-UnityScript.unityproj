@@ -46,10 +46,12 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Necromancer GUI\GUITestScript.js" />
      <Compile Include="Assets\Scripts\Bullet.js" />
      <Compile Include="Assets\Scripts\BulletWallParticles.js" />
      <Compile Include="Assets\Scripts\Enemy.js" />
      <Compile Include="Assets\Scripts\EnemyGenerator.js" />
+     <Compile Include="Assets\Scripts\GUIScript.js" />
      <Compile Include="Assets\Scripts\Player.js" />
      <Compile Include="Assets\ShurikenMagic\Scripts\SM_TransRimShaderFader.js" />
      <Compile Include="Assets\ShurikenMagic\Scripts\SM_TransRimShaderInOut.js" />
@@ -68,6 +70,8 @@
      <Compile Include="Assets\ShurikenMagic\Scripts\SM_stohasticArrowMovement.js" />
      <Compile Include="Assets\ShurikenMagic\Scripts\SM_trailFade.js" />
      <None Include="Assets\Standard Assets\Particles\Sources\Shaders\Particle Alpha Blend (Queue +100).shader" />
+     <None Include="Assets\Necromancer GUI\Kingthings.txt" />
+     <None Include="Assets\Necromancer GUI\Readme.txt" />
      <None Include="Assets\ShurikenMagic\Shaders\SM_2sided_transparent.shader" />
      <None Include="Assets\ShurikenMagic\Shaders\SM_TransparentRim.shader" />
   </ItemGroup>

@@ -14,6 +14,8 @@ public var target : GameObject;
 public var redColor : Color32;
 public var blueColor : Color32;
 
+public var explosion : GameObject;
+
 function Start () {
 	dist = (transform.position - Camera.main.transform.position).z;
 	leftClamp = Camera.main.ViewportToWorldPoint(Vector3(0, 0, dist)).x;
@@ -46,12 +48,34 @@ function Update () {
 	transform.position.y = Mathf.Clamp(transform.position.y, bottomClamp + clampOffset, topClamp - clampOffset);
 }
 
+/**
+* Handle collisions
+* */
 function OnCollisionEnter2D(col : Collision2D) {
-	Debug.Log("collision");
+	// handle bullet collisions
 	if (col.gameObject.tag == "Bullet") {
 		if ((col.gameObject.name == "FireBullet(Clone)" && type == 2) 
 			|| (col.gameObject.name == "IceBullet(Clone)" && type == 1)) {
+			
+			// destroy the bullet
 			GameObject.Destroy(col.gameObject);
+			
+			// Instantiate an explosion
+			Instantiate(explosion, transform.position, Quaternion.identity);
+			
+			// destroy this enemy
+			GameObject.Destroy(gameObject);
+		}
+	}
+	// handle player collisions
+	else if (col.gameObject.tag == "Player") {
+		if ((col.gameObject.name == "Red Player" && type == 2)
+			|| (col.gameObject.name == "Blue Player" && type == 1)) {
+			
+			// Instantiate an explosion
+			Instantiate(explosion, transform.position, Quaternion.identity);
+			
+			// destroy this enemy
 			GameObject.Destroy(gameObject);
 		}
 	}
