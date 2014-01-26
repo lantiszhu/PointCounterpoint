@@ -52,6 +52,7 @@
      <Compile Include="Assets\Scripts\Enemy.js" />
      <Compile Include="Assets\Scripts\EnemyGenerator.js" />
      <Compile Include="Assets\Scripts\GUIScript.js" />
+     <Compile Include="Assets\Scripts\Intro.js" />
      <Compile Include="Assets\Scripts\Player.js" />
      <Compile Include="Assets\ShurikenMagic\Scripts\SM_TransRimShaderFader.js" />
      <Compile Include="Assets\ShurikenMagic\Scripts\SM_TransRimShaderInOut.js" />
