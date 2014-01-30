@@ -16,6 +16,52 @@
     <![endif]-->
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script type="text/javascript">
+      <!--
+      var unityObjectUrl = "http://webplayer.unity3d.com/download_webplayer-3.x/3.0/uo/UnityObject2.js";
+      if (document.location.protocol == 'https:')
+        unityObjectUrl = unityObjectUrl.replace("http://", "https://ssl-");
+      document.write('<script type="text\/javascript" src="' + unityObjectUrl + '"><\/script>');
+      -->
+    </script>
+    <script type="text/javascript">
+      var u = new UnityObject2();
+      u.observeProgress(function (progress) {
+        var $missingScreen = jQuery(progress.targetEl).find(".missing");
+        switch(progress.pluginStatus) {
+          case "unsupported":
+            showUnsupported();
+          break;
+          case "broken":
+            alert("You will need to restart your browser after installation.");
+          break;
+          case "missing":
+            $missingScreen.find("a").click(function (e) {
+              e.stopPropagation();
+              e.preventDefault();
+              u.installPlugin();
+              return false;
+            });
+            $missingScreen.show();
+          break;
+          case "installed":
+            $missingScreen.remove();
+          break;
+          case "first":
+          break;
+        }
+      });
+      jQuery(function(){
+        u.initPlugin(jQuery("#unityPlayer")[0], "pointcounterpoint.unity3d");
+      });
+    </script>
+
+    <style>
+      td {
+         border-bottom: 0
+      }
+    </style>
   </head>
   <body>
       <div id="header">
@@ -29,22 +75,81 @@
 
     <div class="wrapper">
 
-      <section>
+      <section style="margin-bottom: 0; padding-bottom: 0">
         <div id="title">
           <h1>Point Counterpoint</h1>
           <p>MIT Global Game Jam 2014</p>
           <hr>
           <span class="credits left">Project maintained by <a href="https://github.com/newgrounds">newgrounds</a></span>
-          <span class="credits right">Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/michigangraham">mattgraham</a></span>
         </div>
+      </section>
+    </div>
 
-        <p><a href="http://globalgamejam.org/2014/games/pointcounterpoint">http://globalgamejam.org/2014/games/pointcounterpoint</a></p>
+    <div class="wrapper">
+        <p>
+          <h3>About</h3>
+          Point Counterpoint is a 2-player arena shooter with a color-perspective theme.
+          <br />
+          It was developed over a weekend for the Global Game Jam 2014.
+          <br />
+          <a href="http://globalgamejam.org/2014/games/pointcounterpoint">http://globalgamejam.org/2014/games/pointcounterpoint</a>
+          <br /><br />
+          <h3>How-to Play</h3>
+          Enemies of your color will chase you.<br />
+          You will only be able to shoot opposite color enemies and be hurt by same color enemies, forcing you to defend your ally.<br />
+          The goal of the game is to get the highest score possible by cooperating against the enemies.<br /><br />
+          <h3>Controls</h3>
+          We recommend playing with Xbox controllers. At least one Xbox controller is required.
+          <br /><br />
+          <table border="1">
+            <tr>
+              <td></td>
+              <td><strong>Xbox</strong></td>
+              <td><strong>Keyboard</strong></td>
+            </tr>
+            <tr>
+              <td><strong>Movement</strong></td>
+              <td>Left analog stick</td>
+              <td>WASD</td>
+            </tr>
+            <tr>
+              <td><strong>Shooting</strong></td>
+              <td>Right analog stick</td>
+              <td>Arrow keys</td>
+            </tr>
+          </table>
+          <h3 style="text-align: center">Try it out below</h3>
+        </p>
+    </div>
+
+    <div id="unityPlayer" style="height:550px;width:800px;margin-left:auto;margin-right:auto">
+      <div class="missing">
+        <a href="http://unity3d.com/webplayer/" title="Unity Web Player. Install now!">
+          <img alt="Unity Web Player. Install now!" src="http://webplayer.unity3d.com/installation/getunity.png" width="193" height="63" />
+        </a>
+      </div>
+    </div>
+
+    <div class="wrapper">
+      <section>
+        <hr>
 
 <h3>
 <a name="authors-and-contributors" class="anchor" href="#authors-and-contributors"><span class="octicon octicon-link"></span></a>Authors and Contributors</h3>
 
-<p>Eddie Rivas (<a href="https://github.com/randomizethis" class="user-mention">@randomizethis</a>)
-Adam Gressen (<a href="https://github.com/newgrounds" class="user-mention">@newgrounds</a>)</p>
+<table>
+  <tr>
+    <td><strong><u>Programmers</u></strong></td>
+    <td><strong><u>Artists</u></strong></td>
+  </tr>
+  <tr>
+    <td>Eddie Rivas (<a href="https://github.com/randomizethis" class="user-mention">@randomizethis</a>)</td>
+    <td>Chris Chung</td>
+  </tr>
+  <tr>
+    <td>Adam Gressen (<a href="https://github.com/newgrounds" class="user-mention">@newgrounds</a>)</td>
+  </tr>
+</table>
       </section>
 
     </div>
